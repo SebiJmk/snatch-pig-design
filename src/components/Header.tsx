@@ -29,6 +29,13 @@ const Header = () => {
             </a>
           ))}
         </nav>
+
+        <a
+          href="tel:+40721000000"
+          className="rounded-full bg-primary px-5 py-2 font-display text-xs font-bold uppercase tracking-widest text-primary-foreground transition-all duration-200 hover:bg-foreground hover:text-background tactile"
+        >
+          Sună acum
+        </a>
       </div>
     </header>
   );

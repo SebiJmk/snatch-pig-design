@@ -3,10 +3,9 @@ import snatchLogo from "@/assets/snatch-logo.png";
 
 const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
   const [count, setCount] = useState(0);
-  const [phase, setPhase] = useState<"logo" | "glitch" | "done">("logo");
+  const [phase, setPhase] = useState<"logo" | "glitch" | "explode" | "done">("logo");
 
   useEffect(() => {
-    // Phase 1: Logo fades in (handled by CSS)
     const glitchTimer = setTimeout(() => setPhase("glitch"), 600);
     return () => clearTimeout(glitchTimer);
   }, []);
@@ -17,15 +16,16 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
       setCount((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
+          setPhase("explode");
           setTimeout(() => {
             setPhase("done");
             setTimeout(onComplete, 300);
-          }, 200);
+          }, 500);
           return 100;
         }
-        return prev + 4;
+        return prev + 3;
       });
-    }, 30);
+    }, 25);
     return () => clearInterval(interval);
   }, [phase, onComplete]);
 
@@ -40,12 +40,20 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
         alt="Snatch Pub"
         width={120}
         height={120}
-        className={`mb-8 transition-opacity duration-500 ${
-          phase === "logo" ? "opacity-0" : "opacity-100"
-        } ${phase === "glitch" ? "animate-flicker" : ""}`}
-        style={phase === "glitch" ? { animation: "glitch 0.15s ease-in-out infinite, flicker 0.8s linear infinite" } : undefined}
+        className={`mb-8 transition-all duration-300 ${
+          phase === "logo" ? "opacity-0 scale-90" : "opacity-100"
+        } ${phase === "explode" ? "scale-[3] opacity-0 blur-xl" : ""}`}
+        style={
+          phase === "glitch"
+            ? { animation: "glitch 0.15s ease-in-out infinite, flicker 0.8s linear infinite" }
+            : undefined
+        }
       />
-      <div className="font-display text-2xl font-bold tracking-widest text-primary">
+      <div
+        className={`font-display text-4xl sm:text-5xl font-bold tracking-widest text-primary transition-all duration-300 ${
+          phase === "explode" ? "opacity-0 scale-150" : ""
+        }`}
+      >
         {count.toString().padStart(3, "0")}%
       </div>
     </div>
