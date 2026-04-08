@@ -4,6 +4,7 @@ import CustomCursor from "@/components/CustomCursor";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import MenuSection from "@/components/MenuSection";
+import VibeSection from "@/components/VibeSection";
 import MarqueeSection from "@/components/MarqueeSection";
 import FooterSection from "@/components/FooterSection";
 
@@ -19,6 +20,7 @@ const Index = () => {
         <Header />
         <HeroSection />
         <MenuSection />
+        <VibeSection />
         <MarqueeSection />
         <FooterSection />
       </div>

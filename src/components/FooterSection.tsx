@@ -20,7 +20,7 @@ const FooterSection = () => {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         />
-        {/* Precise pink marker — NOT centered, positioned for Cotroceni area */}
+        {/* Precise pink marker */}
         <div
           className="absolute w-3 h-3 rounded-full bg-primary z-10"
           style={{
@@ -111,12 +111,6 @@ const FooterSection = () => {
                 <Facebook className="h-6 w-6" />
               </a>
             </div>
-            {/* Instagram grid placeholders */}
-            <div className="grid grid-cols-3 gap-1.5 w-full max-w-[220px]">
-              {Array.from({ length: 6 }).map((_, i) => (
-                <div key={i} className="aspect-square rounded-sm bg-card border border-border/20" />
-              ))}
-            </div>
           </div>
 
           {/* Right — Logo */}
@@ -133,14 +127,14 @@ const FooterSection = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* Bottom Bar — logo left, credit right */}
       <div className="border-t border-border/20 py-6 px-6">
-        <div className="container flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-sm text-muted-foreground">
-            Made with ❤️ by Bit & Form
-          </p>
+        <div className="container flex items-center justify-between">
           <p className="text-xs text-muted-foreground/60">
             © 2026 Snatch Pub Bucharest
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Made with ❤️ by Bit & Form
           </p>
         </div>
       </div>
