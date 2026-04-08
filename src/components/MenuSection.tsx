@@ -37,27 +37,29 @@ const MenuSection = () => {
     <section id="menu" className="py-24 px-6">
       <div className="container">
         <h2
-          className="text-3xl font-bold uppercase tracking-widest text-center text-foreground mb-12 sm:text-4xl"
+          className="text-3xl font-bold uppercase tracking-widest text-center text-foreground mb-14 sm:text-4xl"
           style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
         >
           Drinks Selection
         </h2>
 
-        {/* Pill Tab Toggle */}
-        <div className="flex justify-center gap-3 mb-12">
-          {(["drinks", "bites"] as const).map((t) => (
-            <button
-              key={t}
-              onClick={() => setTab(t)}
-              className={`font-display text-xs sm:text-sm font-bold uppercase tracking-widest px-8 py-3 rounded-full transition-all duration-300 tactile ${
-                tab === t
-                  ? "bg-primary text-primary-foreground pink-glow-box"
-                  : "border-2 border-primary text-primary hover:bg-primary/10"
-              }`}
-            >
-              {t === "drinks" ? "BĂUTURI" : "MÂNCARE"}
-            </button>
-          ))}
+        {/* Dark Glass Pill Tab Container */}
+        <div className="flex justify-center mb-14">
+          <div className="inline-flex gap-2 rounded-full bg-card/80 backdrop-blur-xl border border-border/40 p-1.5">
+            {(["drinks", "bites"] as const).map((t) => (
+              <button
+                key={t}
+                onClick={() => setTab(t)}
+                className={`font-display text-[10px] sm:text-xs font-bold uppercase tracking-widest px-7 sm:px-9 py-3 rounded-full transition-all duration-300 tactile ${
+                  tab === t
+                    ? "bg-primary text-foreground pink-glow-box"
+                    : "bg-transparent text-muted-foreground border border-transparent hover:border-primary hover:text-primary"
+                }`}
+              >
+                {t === "drinks" ? "Cocktails & Shots" : "Bar Bites"}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Grid */}
@@ -94,7 +96,7 @@ const MenuSection = () => {
       {/* Modal */}
       {selected && (
         <div
-          className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center bg-background/80 backdrop-blur-sm animate-fade-in-up"
+          className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center bg-background/80 backdrop-blur-sm"
           onClick={() => setSelected(null)}
         >
           <div

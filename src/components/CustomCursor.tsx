@@ -37,21 +37,23 @@ const CustomCursor = () => {
     };
   }, [visible]);
 
-  // Hide on touch devices
   if (typeof window !== "undefined" && "ontouchstart" in window) return null;
 
   return (
     <div
-      className="pointer-events-none fixed z-[99999] rounded-full transition-transform duration-150 ease-out"
+      className="pointer-events-none fixed z-[99999] rounded-full transition-all duration-150 ease-out"
       style={{
         left: pos.x,
         top: pos.y,
-        width: hovering ? 32 : 8,
-        height: hovering ? 32 : 8,
+        width: hovering ? 10 : 7,
+        height: hovering ? 10 : 7,
         opacity: visible ? 1 : 0,
         transform: `translate(-50%, -50%)`,
         backgroundColor: "white",
         mixBlendMode: "difference",
+        boxShadow: hovering
+          ? "0 0 12px 4px hsla(340, 100%, 81%, 0.5), 0 0 24px 8px hsla(340, 100%, 81%, 0.2)"
+          : "none",
       }}
     />
   );
