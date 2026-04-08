@@ -24,9 +24,9 @@ const VibeSection = () => {
           {images.map((img, i) => (
             <div
               key={i}
-              className={`overflow-hidden rounded-[4px] tactile ${
+              className={`overflow-hidden rounded-[4px] ${
                 i === 0 ? "row-span-2" : ""
-              } ${i === 4 ? "col-span-2 md:col-span-1" : ""}`}
+              }`}
             >
               <img
                 src={img}

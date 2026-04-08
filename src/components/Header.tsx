@@ -1,8 +1,9 @@
 import snatchLogo from "@/assets/snatch-logo.png";
 
 const navLinks = [
-  { label: "Drinks", href: "#menu" },
-  { label: "Bites", href: "#menu" },
+  { label: "Acasă", href: "#hero" },
+  { label: "Meniu", href: "#menu" },
+  { label: "Vibe", href: "#vibe" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -10,7 +11,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 glass-dark border-b border-border/30">
       <div className="container flex h-16 items-center justify-between px-6">
-        <a href="#" className="flex items-center gap-3 tactile">
+        <a href="#hero" className="flex items-center gap-3 tactile">
           <img src={snatchLogo} alt="Snatch Pub" width={36} height={36} />
           <span className="font-display text-sm font-bold tracking-wider text-foreground">
             SNATCH
@@ -22,7 +23,7 @@ const Header = () => {
             <a
               key={link.label}
               href={link.href}
-              className="font-body text-sm tracking-wide text-muted-foreground transition-colors duration-150 hover:text-primary tactile"
+              className="font-body text-sm tracking-wide text-muted-foreground transition-colors duration-0 hover:text-primary tactile"
             >
               {link.label}
             </a>
@@ -31,7 +32,7 @@ const Header = () => {
 
         <a
           href="tel:+40123456789"
-          className="rounded-full bg-primary px-5 py-2 font-display text-[10px] sm:text-xs font-bold uppercase tracking-widest text-primary-foreground transition-all duration-200 hover:bg-foreground hover:text-background tactile"
+          className="rounded-full bg-primary px-5 py-2 font-display text-[10px] sm:text-xs font-bold uppercase tracking-widest text-primary-foreground transition-all duration-0 hover:bg-foreground hover:text-background tactile"
         >
           Sună acum
         </a>

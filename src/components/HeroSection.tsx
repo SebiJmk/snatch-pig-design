@@ -2,10 +2,10 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+    <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img src={heroBg} alt="" width={1920} height={1080} className="h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-background/75" />
+        <div className="absolute inset-0 bg-background/80" />
       </div>
 
       <div className="relative z-10 flex flex-col items-center px-6 text-center">
@@ -24,7 +24,7 @@ const HeroSection = () => {
 
         <a
           href="#menu"
-          className="mt-10 rounded-full bg-primary px-10 py-4 font-display text-sm font-bold uppercase tracking-widest text-primary-foreground transition-all duration-200 hover:bg-foreground hover:text-background tactile animate-fade-in-up pink-glow-box"
+          className="mt-10 rounded-full bg-primary px-10 py-4 font-display text-sm font-bold uppercase tracking-widest text-primary-foreground transition-all duration-0 hover:bg-foreground hover:text-background tactile animate-fade-in-up pink-glow-box"
           style={{ animationDelay: "0.4s" }}
         >
           Vezi Meniul
