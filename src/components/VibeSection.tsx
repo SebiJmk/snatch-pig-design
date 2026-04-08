@@ -1,11 +1,10 @@
 import vibe1 from "@/assets/vibe/vibe-1.jpg";
 import vibe2 from "@/assets/vibe/vibe-2.jpg";
 import vibe3 from "@/assets/vibe/vibe-3.jpg";
-import vibe4 from "@/assets/vibe/vibe-4.jpg";
 import vibe5 from "@/assets/vibe/vibe-5.jpg";
 import vibe6 from "@/assets/vibe/vibe-6.jpg";
 
-const images = [vibe1, vibe2, vibe3, vibe4, vibe5, vibe6];
+const images = [vibe1, vibe2, vibe3, vibe5, vibe6];
 
 const VibeSection = () => {
   return (
@@ -26,8 +25,8 @@ const VibeSection = () => {
             <div
               key={i}
               className={`overflow-hidden rounded-[4px] tactile ${
-                i === 0 || i === 5 ? "row-span-2" : ""
-              }`}
+                i === 0 ? "row-span-2" : ""
+              } ${i === 4 ? "col-span-2 md:col-span-1" : ""}`}
             >
               <img
                 src={img}
