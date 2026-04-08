@@ -6,44 +6,44 @@
 
 @layer base {
   :root {
-    --background: 0 0% 2%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 2%;
 
-    --card: 0 0% 6.7%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 97%;
+    --card-foreground: 0 0% 2%;
 
-    --popover: 0 0% 6.7%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 97%;
+    --popover-foreground: 0 0% 2%;
 
-    --primary: 340 100% 81%;
-    --primary-foreground: 0 0% 2%;
+    --primary: 224 76% 48%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 6.7%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 2%;
 
-    --muted: 0 0% 6.7%;
-    --muted-foreground: 240 3.8% 66.1%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 340 100% 81%;
-    --accent-foreground: 0 0% 2%;
+    --accent: 224 76% 48%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 14%;
-    --input: 0 0% 14%;
-    --ring: 340 100% 81%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 224 76% 48%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 4%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 340 100% 81%;
-    --sidebar-primary-foreground: 0 0% 2%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 14%;
-    --sidebar-ring: 340 100% 81%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 2%;
+    --sidebar-primary: 224 76% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 0 0% 2%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 224 76% 48%;
   }
 }
 
@@ -71,26 +71,22 @@
     font-family: 'Space Grotesk', sans-serif;
   }
 
-  .glass-dark {
-    background: hsla(0, 0%, 3%, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+  .glass-light {
+    background: hsla(0, 0%, 100%, 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
   }
 
   .tactile {
     @apply transition-transform duration-100 active:scale-95;
   }
 
-  .neon-glow {
-    text-shadow: 0 0 10px hsl(340, 100%, 81%), 0 0 40px hsl(340, 100%, 81%, 0.3);
-  }
-
-  .pink-glow-box {
-    box-shadow: 0 0 30px hsl(340, 100%, 81%, 0.15), 0 0 60px hsl(340, 100%, 81%, 0.05);
+  .blue-glow-box {
+    box-shadow: 0 0 30px hsl(224, 76%, 48%, 0.12), 0 0 60px hsl(224, 76%, 48%, 0.04);
   }
 }
 
-/* Glitch animation for loading screen */
+/* Loading screen animations */
 @keyframes glitch {
   0%, 100% { transform: translate(0); filter: hue-rotate(0deg); }
   10% { transform: translate(-2px, 2px); filter: hue-rotate(90deg); }
@@ -109,11 +105,6 @@
   20%, 24%, 55% { opacity: 0.4; }
 }
 
-@keyframes counter-up {
-  from { --counter: 0; }
-  to { --counter: 100; }
-}
-
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -122,6 +113,12 @@
 @keyframes fade-in-up {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes circle-scale {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 .animate-glitch {
