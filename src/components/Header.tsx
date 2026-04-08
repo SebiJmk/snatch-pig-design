@@ -1,18 +1,20 @@
+import snatchLogo from "@/assets/snatch-logo.png";
+
 const navLinks = [
-  { label: "Meniu", href: "#menu" },
+  { label: "Drinks", href: "#menu" },
+  { label: "Bites", href: "#menu" },
+  { label: "Vibe", href: "#vibe" },
   { label: "Contact", href: "#contact" },
 ];
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 glass-light border-b border-border/50">
+    <header className="relative z-50 glass-dark border-b border-border/30">
       <div className="container flex h-16 items-center justify-between px-6">
-        <a href="#" className="flex items-center gap-2 tactile">
-          <span className="font-display text-sm font-bold tracking-wider text-foreground lowercase">
-            replace
-          </span>
-          <span className="text-[10px] font-body text-muted-foreground tracking-wide uppercase hidden sm:inline">
-            The Brunch Club
+        <a href="#" className="flex items-center gap-3 tactile">
+          <img src={snatchLogo} alt="Snatch Pub" width={36} height={36} />
+          <span className="font-display text-sm font-bold tracking-wider text-foreground">
+            SNATCH
           </span>
         </a>
 

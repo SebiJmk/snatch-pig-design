@@ -52,7 +52,7 @@ const CustomCursor = () => {
         backgroundColor: "white",
         mixBlendMode: "difference",
         boxShadow: hovering
-          ? "0 0 12px 4px hsla(224, 76%, 48%, 0.4), 0 0 24px 8px hsla(224, 76%, 48%, 0.15)"
+          ? "0 0 12px 4px hsla(340, 100%, 81%, 0.5), 0 0 24px 8px hsla(340, 100%, 81%, 0.2)"
           : "none",
       }}
     />
