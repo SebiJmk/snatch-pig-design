@@ -36,23 +36,26 @@ const MenuSection = () => {
   return (
     <section id="menu" className="py-24 px-6">
       <div className="container">
-        <h2 className="font-display text-3xl font-bold uppercase tracking-widest text-center text-foreground mb-12 sm:text-4xl">
-          Meniul
+        <h2
+          className="text-3xl font-bold uppercase tracking-widest text-center text-foreground mb-12 sm:text-4xl"
+          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+        >
+          Drinks Selection
         </h2>
 
-        {/* Tab Toggle */}
-        <div className="flex justify-center gap-2 mb-12">
+        {/* Pill Tab Toggle */}
+        <div className="flex justify-center gap-3 mb-12">
           {(["drinks", "bites"] as const).map((t) => (
             <button
               key={t}
               onClick={() => setTab(t)}
-              className={`font-display text-xs sm:text-sm font-bold uppercase tracking-widest px-6 py-3 rounded-full transition-all duration-300 tactile ${
+              className={`font-display text-xs sm:text-sm font-bold uppercase tracking-widest px-8 py-3 rounded-full transition-all duration-300 tactile ${
                 tab === t
                   ? "bg-primary text-primary-foreground pink-glow-box"
-                  : "bg-card text-muted-foreground hover:text-foreground"
+                  : "border-2 border-primary text-primary hover:bg-primary/10"
               }`}
             >
-              {t === "drinks" ? "Cocktails & Shots" : "Bar Bites"}
+              {t === "drinks" ? "BĂUTURI" : "MÂNCARE"}
             </button>
           ))}
         </div>

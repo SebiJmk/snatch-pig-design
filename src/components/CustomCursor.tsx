@@ -42,15 +42,16 @@ const CustomCursor = () => {
 
   return (
     <div
-      className="pointer-events-none fixed z-[99999] rounded-full bg-primary transition-transform duration-200 ease-out"
+      className="pointer-events-none fixed z-[99999] rounded-full transition-transform duration-150 ease-out"
       style={{
         left: pos.x,
         top: pos.y,
-        width: hovering ? 48 : 12,
-        height: hovering ? 48 : 12,
-        opacity: visible ? (hovering ? 0.4 : 1) : 0,
+        width: hovering ? 32 : 8,
+        height: hovering ? 32 : 8,
+        opacity: visible ? 1 : 0,
         transform: `translate(-50%, -50%)`,
-        mixBlendMode: hovering ? "difference" : "normal",
+        backgroundColor: "white",
+        mixBlendMode: "difference",
       }}
     />
   );
