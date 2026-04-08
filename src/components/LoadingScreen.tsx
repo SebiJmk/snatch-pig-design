@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
-import snatchLogo from "@/assets/snatch-logo.png";
 
 const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
   const [count, setCount] = useState(0);
-  const [phase, setPhase] = useState<"logo" | "glitch" | "explode" | "done">("logo");
+  const [phase, setPhase] = useState<"circles" | "glitch" | "explode" | "done">("circles");
 
   useEffect(() => {
-    const glitchTimer = setTimeout(() => setPhase("glitch"), 600);
-    return () => clearTimeout(glitchTimer);
+    const t = setTimeout(() => setPhase("glitch"), 800);
+    return () => clearTimeout(t);
   }, []);
 
   useEffect(() => {
@@ -25,34 +24,50 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
         }
         return prev + 3;
       });
-    }, 25);
+    }, 22);
     return () => clearInterval(interval);
   }, [phase, onComplete]);
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-background transition-opacity duration-300 ${
+      className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-foreground transition-opacity duration-300 ${
         phase === "done" ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >
-      <img
-        src={snatchLogo}
-        alt="Snatch Pub"
-        width={120}
-        height={120}
-        className={`mb-8 transition-all duration-300 ${
-          phase === "logo" ? "opacity-0 scale-90" : "opacity-100"
-        } ${phase === "explode" ? "scale-[3] opacity-0 blur-xl" : ""}`}
-        style={
-          phase === "glitch"
-            ? { animation: "glitch 0.15s ease-in-out infinite, flicker 0.8s linear infinite" }
-            : undefined
-        }
-      />
+      {/* Geometric concentric circles */}
+      <div className="relative mb-10">
+        {[80, 56, 32].map((size, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full border-2 border-primary/40"
+            style={{
+              width: size,
+              height: size,
+              top: `calc(50% - ${size / 2}px)`,
+              left: `calc(50% - ${size / 2}px)`,
+              animation: `circle-scale 0.6s ease-out ${i * 0.15}s forwards`,
+              opacity: 0,
+            }}
+          />
+        ))}
+        <div
+          className={`relative z-10 font-display text-3xl font-bold tracking-widest transition-all duration-300 ${
+            phase === "explode" ? "scale-[2] opacity-0 blur-lg" : ""
+          }`}
+          style={{
+            color: "hsl(224, 76%, 48%)",
+            animation: phase === "glitch" ? "glitch 0.15s ease-in-out infinite" : undefined,
+          }}
+        >
+          replace
+        </div>
+      </div>
+
       <div
-        className={`font-display text-4xl sm:text-5xl font-bold tracking-widest text-primary transition-all duration-300 ${
+        className={`font-display text-4xl sm:text-5xl font-bold tracking-widest transition-all duration-300 ${
           phase === "explode" ? "opacity-0 scale-150" : ""
         }`}
+        style={{ color: "hsl(224, 76%, 48%)" }}
       >
         {count.toString().padStart(3, "0")}%
       </div>
