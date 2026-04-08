@@ -9,7 +9,7 @@ const navLinks = [
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 glass-dark border-b border-border/30">
+    <header className="relative z-50 glass-dark border-b border-border/30">
       <div className="container flex h-16 items-center justify-between px-6">
         <a href="#" className="flex items-center gap-3 tactile">
           <img src={snatchLogo} alt="Snatch Pub" width={36} height={36} />
