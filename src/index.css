@@ -139,3 +139,22 @@
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out forwards;
 }
+
+@keyframes pig-run {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+@keyframes pig-jump {
+  0%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-28px); }
+  60% { transform: translateY(-28px); }
+}
+
+.animate-pig-run {
+  animation: pig-run 8s linear infinite;
+}
+
+.animate-pig-jump {
+  animation: pig-jump 1.2s ease-in-out infinite;
+}

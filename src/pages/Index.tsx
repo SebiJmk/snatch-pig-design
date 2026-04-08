@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import MenuSection from "@/components/MenuSection";
 import VibeSection from "@/components/VibeSection";
-import MarqueeSection from "@/components/MarqueeSection";
+import PigRunSection from "@/components/PigRunSection";
 import FooterSection from "@/components/FooterSection";
 
 const Index = () => {
@@ -21,7 +21,7 @@ const Index = () => {
         <HeroSection />
         <MenuSection />
         <VibeSection />
-        <MarqueeSection />
+        <PigRunSection />
         <FooterSection />
       </div>
     </>
